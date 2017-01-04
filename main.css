@@ -1,18 +1,47 @@
 * {
 	background-color: #1a1a1a;
 }
-
 #chatbox {
 	width: 300px;
 	height: 500px;
-	border: solid 1px;
 	border-radius: 5px;
 	background-color: white;
 	margin: auto;
+	
+}
+h1 { 
+	color: white;
+	text-align: center;
 }
 
-h1 {
+.welcome {
 	color: white;
 	text-align: center;
 	
 }
+form { 
+	display: inline-block;
+
+	background-color: red;
+}
+
+form input {
+	background-color: white;
+	border-radius 5px;
+
+
+ }
+#usrmsg { 
+	width: 200px;
+	height : 20px;
+	background-color: white;
+	border-radius 5px;
+
+ }
+ #submitmsg { 
+ 	width: 50px;
+ 	height: 20px;
+ }
+			
+
+	
