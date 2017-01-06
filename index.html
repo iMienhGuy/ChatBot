@@ -2,15 +2,69 @@
 <html>
 	<head>
 		<title>Chat Bot</title>
-		<link rel="stylesheet" type="text/css" href="main.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="main.js"></script>
+		<link type="text/css" rel="stylesheet" href="main.css"/>
 	</head>
 
 	<body>
-		<h1>Chat Bot</h1>
-		<div class="chat">
-
+		<div id="greeting">
+			<div id="first">Hello, User</div>
+			<div id="second">My name is Chat Bot</div>
+			<div id="third">What is your name?</div>
 		</div>
+		<form id="username" method="post" onsubmit="return false">
+
+				<div>
+					<div>
+						<input type="text" id="username" placeholder="Name"/>
+					</div>
+					<div id="btn">
+						<input type="submit" id="submit" value="Enter"/>
+					</div>
+				</div>
+
+		</form>
+		<div id="wrapper">
+			<div id="menu">
+				<p class="welcome">Welcome, </p>
+				<div style="clear:both"></div>
+			</div>
+
+			<div class="chatbox"></div>
+
+			<form id="form" name="message" action="">
+				<input name="usermsg" type="text" id="usermsg" size="63" autocomplete="off" placeholder="Message..." />
+				<input name="submitmsg" type="submit" id="submitmsg" value="Send"/>
+			</form>
+		</div>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+		<script src="main.js"></script>
+		<script type="text/javascript">
+			//jQuery Document
+			$(document).ready(function(){
+
+				$("#first")
+					.fadeIn({duration: 1500})
+					.animate({top : "-=500"}, {duration: 1500, queue: false}, function() {
+						$("#first")
+							.delay(1000)
+							.animate({"opacity" : 0}, {duration: 1500});	
+					});
+				
+				
+				/*$("#username").animate({
+					height: "250px", width: "400px"
+				}, {duration: 500, queue: true});
+				$("#username").delay(500).fadeIn({
+					duration: 500, queue: false});*/
+				
+			})
+			/*$("#username").animate({
+				$(this).animate({height:"250px", width:"400px"});
+				$(this).children("p").animate({fontSize:"20px"});
+				$(this).delay(500).fadeIn();
+			})*/
+		</script>
 	</body>
+
 </html>
