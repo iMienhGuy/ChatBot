@@ -1,47 +1,114 @@
-* {
-	background-color: #1a1a1a;
+body{
+	background-color: black;
 }
-#chatbox {
+
+#greeting div {
+	display: none;
+	color: white;
+	position: fixed;
+	text-align: center;
+	bottom: 0px;
+	width: 100%;
+	height: -10px;
+	font-size: 30px;
+	font-family: serif;
+}
+.container { 
+	width: 90%;
+	height : 90%;
+	border-radius: 5px;
+	display:block;
+	background-color: #3D72A4;
+ }
+.bigChatBox {
 	width: 300px;
 	height: 500px;
 	border-radius: 5px;
 	background-color: white;
-	margin: auto;
-	
+	display: block;
+	display: none;
 }
+
+#menu { 
+	display: none;
+ }
+.smallChatBox { 
+	width: 300px;
+	height: 20px;
+	background-color: white;
+	border-radius: 5px;
+	display: block;
+	display: none;
+
+ }
 h1 { 
 	color: white;
 	text-align: center;
+	display:none;
 }
 
 .welcome {
 	color: white;
 	text-align: center;
+	display: none;
 	
 }
-form { 
-	display: inline-block;
-
-	background-color: red;
-}
-
-form input {
-	background-color: white;
-	border-radius 5px;
 
 
- }
-#usrmsg { 
+.usrmsg { 
 	width: 200px;
 	height : 20px;
-	background-color: white;
 	border-radius 5px;
 
  }
- #submitmsg { 
+ .submitmsg { 
  	width: 50px;
  	height: 20px;
  }
+ .center { 
+	margin: auto;
+  }
+
+  form input { 
+  	background-color: white;
+  	margin:auto;
+   }
+
+   #user {
+	display: none;
+	width: 350px;
+	height: 200px;
+	margin: 0px auto;
+	margin-top: 400px;
+}
+
+#user > div > div {
+	width: 250px;
+	height: 40px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+#user > div > div > input {
+	width: 250px;
+	height: 35px;
+	background: transparent;
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+#user > div > #btn {
+	width: 100px;
+	height: 35px;
+	margin: 0px auto;
+}
+
+#user > div > #btn > #submit {
+	width: 100px;
+	height: 35px;
+	cursor: pointer;
 			
 
 	
