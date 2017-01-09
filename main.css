@@ -1,5 +1,6 @@
-* {
-	background-color: #1a1a1a;
+body {
+	background-color: #1a1a1a; // black
+	//background-color: #3D72A4; // blue
 }
 
 #greeting div {
@@ -9,32 +10,50 @@
 	text-align: center;
 	bottom: 0px;
 	width: 100%;
-	height: -10px;
 	font-size: 30px;
 	font-family: serif;
 }
 
-#wrapper {
-	background-color: gray;
+#greeting > div {
+	height: -10px;
+}
+
+#second #third {
+	margin-top: 490px;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	font-family: serif;
 	display: none;
 }
 
-#username {
+#container {
+	width: 70%;
+	height: 90%;
+	background-color: black;
+	border-radius: 5px;
+	margin: auto;
+	display: none;
+}
+
+#user {
 	display: none;
 	width: 350px;
 	height: 200px;
 	margin: 0px auto;
-	margin-top: 5px;
+	margin-top: 400px;
 }
 
-#username > div > div {
+#user > div > div {
 	width: 250px;
 	height: 40px;
 	margin: 0px auto;
 	margin-bottom: 10px;
 }
 
-#username > div > div > input {
+#user > div > div > input {
 	width: 250px;
 	height: 35px;
 	background: transparent;
@@ -44,29 +63,32 @@
 	font-family: sans-serif;
 }
 
-#username > div > #btn {
+#user > div > #btn {
 	width: 100px;
 	height: 35px;
 	margin: 0px auto;
 }
 
-#username > div > #btn > #submit {
+#user > div > #btn > #submit {
 	width: 100px;
 	height: 35px;
+	cursor: pointer;
 }
 
 .welcome {
 	color: white;
 	text-align: center;
+	font-family: serif;
 }
 
-#chatbox {
+.chatbox {
 	width: 300px;
 	height: 500px;
 	border: solid 1px;
 	border-radius: 5px;
 	background-color: white;
 	margin: auto;
+	display: none;
 }
 
 #form {
@@ -88,4 +110,5 @@ form input {
 #submitmsg {
 	width: 50px;
 	height: 20px;
+	cursor: pointer;
 } 
