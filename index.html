@@ -9,13 +9,14 @@
 		<!-- Chatbox is where the text will be displayed -->
 		<h1> ChatBox </h1>
 		<!-- Before you see Chatbox, the greeting will be displayed -->
-		<div id="greeting"> 
-			<div id="first">Hello, User</div>
-			<div id="second">My Name is Chat Bot</div>
-			<div id="third">What is your name?</div>
-		</div>
+		<div class = "greeting"> 
+			<div id="first" class = "fadeIn slideUp fadeOut">Hello, User</div>
+			<div id="second"> My Name is ChatBox </div>
+	   </div>
+
+		
 		<!-- This is the button user clicks after enter name, and then chatbox will show-->
-		<form id="user" method="post" onsubmit="return false">
+		<form id="user" class = "fadeIn" method="post" onsubmit="return false">
 				<div>
 					<div>
 						<input type="text" id="username" placeholder="Name"/>
@@ -36,7 +37,7 @@
 				<!-- smallChatBox is what user will type in -->
 				<div class = "center smallChatBox">
 					<form name="message" action="" >
-					<div class = "center content">	<input name="usermsg" type="text"  size="63"/> </div>
+					<div class = "center content">	<input name="usermsg" type="textarea"  size="63"/> </div>
 					<div class = "center content">	<input name="submitmsg" type="submit" class = "submitmsg" value="Send"/> </div>
 					</form>
 		  	    </div>
