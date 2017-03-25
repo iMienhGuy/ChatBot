@@ -1,0 +1,132 @@
+/*div{
+	border: 2px solid red;
+
+}
+*/
+body{
+	background-color: #333;
+	color: white;
+		font-family: monospace;
+
+}
+
+
+ 
+ 
+.topBox{
+width: 310px;
+height:60px;
+margin:auto;
+border-radius: 5px;
+
+}
+.down {
+	transform:translateY(100px);
+}
+
+.greeting {
+	margin-top: 20%;
+	width: 100%;
+	font-size: 30px;
+	font-family: monospace;
+	
+}
+
+
+.bigChatBox {
+	width: 310px;
+	height: 500px;
+	border-radius: 5px;
+	background-color: white;
+	display: block;
+	position:relative;
+
+	
+	
+}
+
+.text {
+	position: absolute; 
+bottom: 0;
+}
+
+
+.smallChatBox { 
+	
+
+	width: 310px;
+	
+
+ }
+h1 { 
+	text-align: center;
+	
+}
+
+.welcome {
+	
+	/*display: none; */
+	padding: 2em 0em;
+	font-size:2em;
+	
+	
+}
+
+
+
+.test { 
+	border:3px gray solid;
+
+	border-radius:5px;
+	
+	color:black;
+
+ }
+ .submitmsg { 
+ 
+ 	width: 50px;
+ 	height: 20px;
+
+ }
+ .center { 
+ 	float:none;
+	margin: auto;
+  }
+
+  form input { 
+  	background-color: white;
+  	margin:auto;
+   }
+
+   #user {
+	width: 350px;
+	height: 200px;
+	margin: 0px auto;
+}
+
+#user > div > div {
+	width: 250px;
+	height: 40px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+.input {
+	width: 250px;
+	height: 35px;
+	background: transparent;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+
+
+#submit {
+	cursor: pointer;
+}
+			
+.try {
+	width:310px;
+	}
+

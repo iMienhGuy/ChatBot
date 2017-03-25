@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat Bot</title>
+
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+   	<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+
+	<body>
+	<div class = "container">
+
+		<!-- Chatbox is where the text will be displayed -->
+		
+		<!-- Before you see Chatbox, the greeting will be displayed -->
+		<div class = " greeting "> 
+
+			<p class = "text-center"> Hello, User </p>
+			 <p class = "text-center"> My Name is ChatBox  </p>
+			 <p class = "text-center">What is Your Name? </p>
+
+	   </div>	
+
+		
+		<!-- This is the button user clicks after enter name, and then chatbox will show-->
+		<form id="user" action = "chat.html">
+				<div class = "row">
+					<div class = " center">
+						<input  class = "input" type="text" id="username" placeholder="Name" required />
+					</div>
+				</div>
+					
+					<div class = "row">
+						<div class = " center">
+				  <button  type="submit" id = "click" class="input">Submit</button>
+						</div>
+					</div>
+
+		</form>
+		
+    </div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+
+</html>
+<!--
+
+<form id="user"  method="post" onsubmit="return false" action = "/chat.html">
+					
+					<div class = "col-md-3 center">
+						<input  class = "input" type="text" id="username" placeholder="Name" required/>
+					</div>
+			
+					<div class = "center">
+				  <button " type="submit" class="input btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
+						</div>-->
