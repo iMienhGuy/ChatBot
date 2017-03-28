@@ -2,11 +2,15 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-
+var str = "W e l c o m e , U s e r ";
+  var arr = str.split(" ");
+  console.log(arr);
 // make the css files public
 app.use(express.static('public'));
 
 var router = express.Router();
+
+
 
 // sends index.html file to homepage 
 app.get('/', function(req, res) {
@@ -14,11 +18,35 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + "/public/index.html"));
 
 });
+// route middleware
+router.use(function(req, res, next) {
+	//log each request to console
+	console.log(req.method, req.url);
+	//contine doing what we were doing and go to route
+	next();
 
-app.get('/test', function(req, res) {
-	res.send("This is a test");
 });
 
+
+app.get('/chat', function(req, res) {
+	res.sendFile(path.join(__dirname + "/public/chat.html"));
+});
+
+
+app.post('/login', function(req, res) {
+	var sess = req.body;
+	console.log(sess);
+	if(sess.length > 0) {
+		res.status(200);
+		res.send("Success");
+
+	}
+	else {
+		res.status(400);
+		res.send("Fail");
+	}
+	
+});
 app.use('/', router);
 
 app.listen(1337);
