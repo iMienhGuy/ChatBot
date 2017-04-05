@@ -13,19 +13,25 @@ $(document).ready(function() {
   $(".tests").innerhtml(str2);
   setTimeout(300);
 
+
   
 
 }
+
 */
+
+
 // do ajax call and use get/post to get input value to backend
 // in back end, verify if > 0 and send a response back to front end
 // if error, send /400 
-$("#click").click(function(e) {
-  $.ajax({url: "/login", 
-    method : "POST",
-    data : JSON.stringify({username: $("#username").val()}),
+$("#click").click(function() {
+  var name = {username : $("#username").val()};
+  $.ajax({url: 'http://localhost:1337/login', 
+    type : 'POST',
+    data: name,
      success: function(res){
-          window.location.href = "/chat";
+       window.location.href = "/chat";
+       console.log("success!", res);
      }
 
 

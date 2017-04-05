@@ -3,7 +3,7 @@
 6599FF  ??
 */
 body{
-	background-color: #FF6600;
+	background-color: #81A594;
 	color: #00FF00;
 	color:white;
 	font-family: monospace;		
@@ -27,6 +27,7 @@ width: 310px;
 height:60px;
 margin:auto;
 border-radius: 5px;
+
 
 }
 input[type = text]{

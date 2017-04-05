@@ -1,0 +1,25 @@
+{
+  "name": "exit",
+  "version": "1.0.0",
+  "description": "Chatbot is a web application that allows a user to communicate with ChatBot using Api.ai and node express.",
+  "main": "jquery-3.1.1.min.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMienhGuy/ChatBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iMienhGuy/ChatBot/issues"
+  },
+  "homepage": "https://github.com/iMienhGuy/ChatBot#readme"
+}

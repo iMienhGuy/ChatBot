@@ -1,12 +1,15 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser')
 
 var str = "W e l c o m e , U s e r ";
   var arr = str.split(" ");
   console.log(arr);
 // make the css files public
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 var router = express.Router();
 
@@ -33,12 +36,16 @@ app.get('/chat', function(req, res) {
 });
 
 
-app.post('/login', function(req, res) {
+
+app.post('/login',function(req, res) {
+	
 	var sess = req.body;
-	console.log(sess);
-	if(sess.length > 0) {
+
+	console.log(sess.username);
+	if(sess.username.length > 0) {
 		res.status(200);
-		res.send("Success");
+		  res.end(JSON.stringify(sess));
+
 
 	}
 	else {
@@ -46,7 +53,11 @@ app.post('/login', function(req, res) {
 		res.send("Fail");
 	}
 	
+	
+	
 });
+
+
 app.use('/', router);
 
 app.listen(1337);
