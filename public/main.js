@@ -1,46 +1,43 @@
 
 $(document).ready(function() {
-//   var test = $("#username").val();
 
-  /*
-  var $str = $(".tests");
+// when I click submit after enter text,
+// post it to db to store it. then grab it and 
+// append divs inside  bigChatBot. clear text after press enter
 
-  var $arr = $str.split(" ");
-  $(".tests").text("");
+/*var $chatlog = $(."bigChatBot");
 
-  for(var i = 0; i < arr.length(); i++) {
-    str2 += arr[i];
-  $(".tests").innerhtml(str2);
-  setTimeout(300);
-
-
-  
-
+function addChat() {
+  chatlog.append("User :" )
 }
-
 */
-
+//putting var x here makes the first alert undefined for res? why?
+ var x;
 
 // do ajax call and use get/post to get input value to backend
 // in back end, verify if > 0 and send a response back to front end
 // if error, send /400 
-$("#click").click(function() {
+$("#user").submit(function(e) {
+  e.preventDefault();
   var name = {username : $("#username").val()};
   $.ajax({url: 'http://localhost:1337/login', 
     type : 'POST',
     data: name,
      success: function(res){
        window.location.href = "/chat";
+        x = res;
+       alert(x);
        console.log("success!", res);
      }
-
-
-        
+       
   });
 
+ 
+
+ // $(".welcome").text("Welcome, " + x);
 
 
-
+ 
 
      // way to stop the form from refershing
 /*    e.preventDefault();
@@ -51,7 +48,7 @@ $("#click").click(function() {
       window.location.href = "/chat";
       */
 });
-
+  
 
 });
   /*$("#click").click(function() {

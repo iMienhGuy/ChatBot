@@ -82,6 +82,7 @@ input[type = text]{
 	background-color: white;
 	display: block;
 	position:relative;
+	margin-bottom: 10px;
 
 	
 	
@@ -137,4 +138,13 @@ h1 {
 .try {
 	width:310px;
 	}
+
+
+.chat {
+		width : 50%;
+		background: #666;
+		padding: 10px 0px;
+		
+
+}
 

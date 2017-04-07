@@ -1,11 +1,25 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var session = require('express-session');
+app.use(session({secret: 'ssshhhh'}));
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'peter',
+  password : '123',
+  database : '<chat>'
+});
 
-var str = "W e l c o m e , U s e r ";
+connection.connect();
+
+
+
+/*var str = "W e l c o m e , U s e r ";
   var arr = str.split(" ");
   console.log(arr);
+  */
 // make the css files public
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,16 +49,18 @@ app.get('/chat', function(req, res) {
 	res.sendFile(path.join(__dirname + "/public/chat.html"));
 });
 
+app.get('/login'), function(req, res) {
 
-
+}
+ var sess;
 app.post('/login',function(req, res) {
-	
-	var sess = req.body;
+	sess = req.session;
+	sess.username = req.body.username;
 
 	console.log(sess.username);
 	if(sess.username.length > 0) {
 		res.status(200);
-		  res.end(JSON.stringify(sess));
+		  res.end(sess.username);
 
 
 	}
