@@ -23,12 +23,12 @@ body{
 }
 
 .topBox{
-width: 310px;
-height:60px;
-margin:auto;
-border-radius: 5px;
-color: black;
-
+	width: 310px;
+	height:60px;
+	margin:auto;
+	border-radius: 5px;
+	color: black;
+	font-size:2em;
 
 }
 input[type = text]{
@@ -85,7 +85,7 @@ input[type = text]{
 	
 }
 .bigchatBox div {
-	color  : black;
+	color: black;
 }
 
 .text {
@@ -103,6 +103,7 @@ bottom: 0;
  }
 h1 { 
 	text-align: center;
+
 	
 }
 
