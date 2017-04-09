@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 app.use(session({secret: 'ssshhhh'}));
 var mysql      = require('mysql');
-var connection = mysql.createConnection({
+/*var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'peter',
   password : '123',
@@ -13,6 +13,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
+*/
 
 
 
@@ -44,14 +45,17 @@ router.use(function(req, res, next) {
 
 });
 
-
 app.get('/chat', function(req, res) {
 	res.sendFile(path.join(__dirname + "/public/chat.html"));
 });
 
-app.get('/login'), function(req, res) {
+app.get('/login', function(req, res) {
+	sess = req.session;
+	res.send(sess.username);
 
-}
+
+});
+
  var sess;
 app.post('/login',function(req, res) {
 	sess = req.session;
@@ -60,7 +64,7 @@ app.post('/login',function(req, res) {
 	console.log(sess.username);
 	if(sess.username.length > 0) {
 		res.status(200);
-		  res.end(sess.username);
+		  res.end("Success");
 
 
 	}

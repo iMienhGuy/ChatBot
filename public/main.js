@@ -1,22 +1,27 @@
 
 $(document).ready(function() {
+  var $chatlog = $(".chatLog");
 
-// when I click submit after enter text,
+
+// when I click submit after enter text in chat.html,
 // post it to db to store it. then grab it and 
 // append divs inside  bigChatBot. clear text after press enter
+$("#submit").click(function() {
+  var text = $("#comment").val();
+    $chatlog.append("<div class = 'lol'>  </div>");
+    $chatlog.children().last().html(text);
+    $("#comment").val("");
 
-/*var $chatlog = $(."bigChatBot");
+});
 
-function addChat() {
-  chatlog.append("User :" )
-}
-*/
-//putting var x here makes the first alert undefined for res? why?
- var x;
 
-// do ajax call and use get/post to get input value to backend
-// in back end, verify if > 0 and send a response back to front end
-// if error, send /400 
+
+
+
+
+// do ajax call and use post verify if username > 0 to get input value to backend
+// send the data to server  and let it handle post call,
+// if successful, will reroute the page to chat.html
 $("#user").submit(function(e) {
   e.preventDefault();
   var name = {username : $("#username").val()};
@@ -25,67 +30,40 @@ $("#user").submit(function(e) {
     data: name,
      success: function(res){
        window.location.href = "/chat";
-        x = res;
-       alert(x);
+       
        console.log("success!", res);
      }
        
   });
 
  
+});
 
- // $(".welcome").text("Welcome, " + x);
 
-
- 
-
-     // way to stop the form from refershing
-/*    e.preventDefault();
-    var test = $("#username").val();
-
-    console.log(test);
-    if(test.length> 0) {
-      window.location.href = "/chat";
-      */
+//sends a get request so that the server can grab the data from /login route
+// which contains the username 
+// store the response from the get request and then output it to chat.html for users to see
+ $.ajax({url: 'http://localhost:1337/login', 
+    type : 'GET',
+     success: function(res){
+      var x = res;
+        $(".welcome").text("Welcome, " + x);
+       console.log("success!", res);
+     }
+       
+  });
+     
 });
   
+  /*
+Attempts to scroll the chatlog to the bottom when text filled up
 
-});
-  /*$("#click").click(function() {
-    window.setInterval(check, 100);
-
-
-  });
-
-  */
-
-/*
-  $('#click').click(function() {
-    var test = $("#username").val();
-    $('#welcome').append(test);
-
-
-  });
-  */
-
-/*
-function name() {
-  var test = $("#username").val();
-  if(test.length > 0 && submitted == 0) {
-
-
-  }
-}
-function check() {
-  if(test  > 0)
-  if($"#user".is(':visible') && submitted == 0) {
-    submitted = 1;
-     window.location.href = "/chat";
-
-  }
-}
-
+  $(".bigChatBox").animate({
+        scrollTop: $(".bigChatBox")[0].scrollHeight}, 2000);
 */
+
+
+  
 
 
    

@@ -11,25 +11,25 @@
 	</head>
 
 	<body>
-	<div class = "container his">
-			
-			<p class=" text-center welcome">Welcome, </p>
-
+	<div class = "container his">	
+		<p class=" text-center welcome">Welcome, </p>
 		<!-- Chatbox is where the text will be displayed -->
-			<h1 class ="topBox bg-primary"> ChatBox </h1>
+		<h1 class ="topBox bg-primary"> ChatBot </h1>
 					
 				<!-- bigChatBox will display the text-->
-			<div class = "bigChatBox center">
-			<!--	<div class = "chat"> Hi </div> -->
-				<div class = "text form-group smallChatBox">
-	    			<textarea class="form-control orangeBorder" rows="3" id="comment"></textarea> 
+		<div class = "bigChatBox center">
+			<div class = "chatLog pre-scrollable">
+			</div>
+
+			<div class = "text form-group smallChatBox">
+	    		<textarea class="form-control" rows="3" id="comment"></textarea> 
 				 </div>
 						
 			</div>
 	
 				<!-- smallChatBox is what user will type in -->
 			<div class = "smallChatBox center">
-				 <button " type="submit" class="try btn btn-primary bigger"><i class="fa fa-paper-plane"></i> Submit</button>
+				 <button type="submit" id = "submit" class="btn-block btn btn-primary bigger"><i class="fa fa-paper-plane"></i> Submit</button>
 			</div>
 	 </div>
 		  	    

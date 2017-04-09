@@ -27,6 +27,7 @@ width: 310px;
 height:60px;
 margin:auto;
 border-radius: 5px;
+color: black;
 
 
 }
@@ -68,16 +69,12 @@ input[type = text]{
 
 
 
-#submit {
-	cursor: pointer;
-}
-
 /* chat.html
 --------------------------------------------------------------
 */
 .bigChatBox {
 	width: 310px;
-	height: 500px;
+	height: 450px;
 	border-radius: 5px;
 	background-color: white;
 	display: block;
@@ -86,6 +83,9 @@ input[type = text]{
 
 	
 	
+}
+.bigchatBox div {
+	color  : black;
 }
 
 .text {
@@ -117,12 +117,7 @@ h1 {
 
 
 
- .submitmsg { 
  
- 	width: 50px;
- 	height: 20px;
-
- }
  .center { 
  	float:none;
 	margin: auto;
@@ -134,11 +129,6 @@ h1 {
    }
 
 
-			
-.try {
-	width:310px;
-	}
-
 
 .chat {
 		width : 50%;
@@ -146,5 +136,9 @@ h1 {
 		padding: 10px 0px;
 		
 
+}
+.lol{
+	border: 2px solid red;
+	margin-bottom: 15px;
 }
 
