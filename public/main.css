@@ -17,10 +17,7 @@ body{
 
 }
 
-.col-center{
-	margin: 0 auto;
-	float:none;
-}
+
 
 .topBox{
 	width: 310px;
@@ -116,6 +113,10 @@ h1 {
 	
 }
 
+.chatLog div{
+	border : 2px solid red;
+	margin-bottom:15px;
+}
 
 
  
@@ -138,8 +139,5 @@ h1 {
 		
 
 }
-.lol{
-	border: 2px solid red;
-	margin-bottom: 15px;
-}
+
 
