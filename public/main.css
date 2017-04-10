@@ -1,0 +1,141 @@
+
+/*
+6599FF  ??
+*/
+body{
+	background-color: black;
+	//background-color: #81A594;
+	color: #00FF00;
+	color:white;
+	font-family: monospace;		
+
+}
+.what{
+	margin-top : 6em;
+	background: #000;
+	border-radius: 1em;
+	border: 2em solid #BDBDBD;
+
+}
+
+.col-center{
+	margin: 0 auto;
+	float:none;
+}
+
+.topBox{
+width: 310px;
+height:60px;
+margin:auto;
+border-radius: 5px;
+
+
+}
+input[type = text]{
+	color: black;
+}
+
+
+.greeting {
+	margin-top: 4em;
+	font-size: 2.2em;
+
+	
+}
+
+
+#user {
+
+	width: 350px;
+	height: 200px;
+	margin: 0px auto;
+	margin-top: 3em;
+}
+
+#user > div {
+	width: 250px;
+	margin-bottom: 10px;
+}
+
+.input {
+	margin : 0px auto;
+	width: 250px;
+	height: 40px;
+	
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+
+
+#submit {
+	cursor: pointer;
+}
+
+/* chat.html
+--------------------------------------------------------------
+*/
+.bigChatBox {
+	width: 310px;
+	height: 500px;
+	border-radius: 5px;
+	background-color: white;
+	display: block;
+	position:relative;
+
+	
+	
+}
+
+.text {
+	position: absolute; 
+bottom: 0;
+}
+
+
+.smallChatBox { 
+	
+
+	width: 310px;
+	
+
+ }
+h1 { 
+	text-align: center;
+	
+}
+
+.welcome {
+	
+	/*display: none; */
+	padding: 2em 0em;
+	font-size:2em;
+	
+	
+}
+
+
+
+ .submitmsg { 
+ 
+ 	width: 50px;
+ 	height: 20px;
+
+ }
+ .center { 
+ 	float:none;
+	margin: auto;
+  }
+
+  form input { 
+  	background-color: white;
+  	margin:auto;
+   }
+
+
+			
+.try {
+	width:310px;
+	}
+

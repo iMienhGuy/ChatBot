@@ -1,0 +1,155 @@
+html {
+	//height: 100%;
+}
+
+body {
+	//height: 100%;
+	//margin: 0;
+	overflow: hidden; 
+	background-color: #1a1a1a; // black
+	//background-color: #3D72A4; // blue
+}
+
+#greeting div {
+	display: none;
+	color: white;
+	border: 3px solid green;
+	position: absolute;
+	margin: auto;
+	margin-left: -10px;
+	text-align: center;
+	width: 100%;
+	font-size: 30px;
+	font-family: serif;
+}
+
+#first {
+	bottom: 0px;
+}
+
+#second, #third {
+	top: 30%;
+	//top: 250px;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	font-family: serif;
+	display: none;
+}
+
+#container {
+	width: 70%;
+	height: 90%;
+	background-color: black;
+	border-radius: 5px;
+	margin: auto;
+	display: none;
+}
+
+#name {
+	background: #333;
+	border-radius: 5px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%)  translateY(-50%);
+	opacity: 0.7;
+	display: none;
+}
+
+.namePrompt {
+	color: white;
+	font-family: serif;
+	text-align: center;
+	//line-height: 35px;
+}
+
+#user {
+	display: none;
+	width: 350px;
+	height: 200px;
+	margin: 0px auto;
+	margin-top: 400px;
+}
+
+#user > div > div {
+	width: 250px;
+	height: 40px;
+	margin: 0px auto;
+	margin-top: 15px;
+}
+
+#user > div > div > input {
+	width: 250px;
+	height: 35px;
+	position: absolute;
+	background: transparent;
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+#user > div > #btn {
+	width: 100px;
+	height: 35px;
+	margin: 0px auto;
+}
+
+#user > div > #btn > #submit {
+	width: 100px;
+	height: 35px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%)  translateY(-50%);
+	margin-top: 60px;
+	cursor: pointer;
+}
+
+#username {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%)  translateY(-50%);
+}
+
+.welcome {
+	color: white;
+	text-align: center;
+	font-family: serif;
+}
+
+.chatbox {
+	width: 300px;
+	height: 500px;
+	border: solid 1px;
+	border-radius: 5px;
+	background-color: white;
+	margin: auto;
+	display: none;
+}
+
+#form {
+	//display: inline-block;
+	margin: auto;
+	position: center;
+}
+
+form input {
+	background-color: white;
+	border-radius: 5px;
+}
+
+#usermsg {
+	width: 200px;
+	height: 20px;
+}
+
+#submitmsg {
+	width: 50px;
+	height: 20px;
+	cursor: pointer;
+} 
