@@ -114,8 +114,12 @@ h1 {
 }
 
 .chatLog div{
-	border : 2px solid red;
-	margin-bottom:15px;
+	border : 2px solid #7DB0CF;
+	background: #7DB0CF;
+	display: inline-block;
+	//margin-bottom:15px;
+	margin: 15px;
+	border-radius:7px;
 }
 
 
@@ -123,12 +127,12 @@ h1 {
  .center { 
  	float:none;
 	margin: auto;
-  }
+ }
 
-  form input { 
+ form input { 
   	background-color: white;
   	margin:auto;
-   }
+ }
 
 
 
@@ -136,8 +140,6 @@ h1 {
 		width : 50%;
 		background: #666;
 		padding: 10px 0px;
-		
-
 }
 
 
