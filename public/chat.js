@@ -2,7 +2,9 @@
 $(document).ready(function() {
 
     var $chatlog = $(".chatLog");
-
+    var letter;
+/*chatlog.animate({
+        scrollTop: chatlog[0].scrollHeight}, 2000);*/
 
 //sends a get request so that the server can grab the data from /login route
 // which contains the username 
@@ -12,6 +14,7 @@ $(document).ready(function() {
      success: function(res){
 
       var x = res;
+      letter = x[0];
         $(".welcome").text("Welcome, " + x);
        console.log("success!", res);
      }
@@ -30,6 +33,15 @@ $(document).ready(function() {
 $("#submit").click(function() {
   var text = $("#comment").val();
   dostuff(text);
+  $.ajax({url: 'http://localhost:1337/chatlog', 
+    type : 'POST',
+    data: {log: text},
+     success: function(res){
+       
+       console.log("success!", res);
+     }
+       
+  });
    
 
 });
@@ -41,7 +53,7 @@ function dostuff(text) {
     
     else {
       $chatlog.append("<div>  </div>");
-      $chatlog.children().last().html(text);
+      $chatlog.children().last().text(letter + ": " + text);
       $("#comment").val("");
   }
 
@@ -96,8 +108,23 @@ $("#user").submit(function(e) {
      }
        
   });
+ /*
+$("#submit").click(function() {
+  var text = $("#comment").val();
+  var log= {chat: text},
+$.ajax({url: 'http://localhost:1337/chatlog',
+    type: 'POST',
+    data : log,
+    success: function(res) {
+      console.log("Success!", res);
+    }
+  
+
+});
+ */
      
 });
+
   
   /*
 Attempts to scroll the chatlog to the bottom when text filled up
@@ -105,6 +132,9 @@ Attempts to scroll the chatlog to the bottom when text filled up
   $(".bigChatBox").animate({
         scrollTop: $(".bigChatBox")[0].scrollHeight}, 2000);
 */
+
+
+
 
 
   

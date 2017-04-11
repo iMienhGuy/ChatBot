@@ -116,10 +116,11 @@ h1 {
 .chatLog div{
 	border : 2px solid #7DB0CF;
 	background: #7DB0CF;
-	display: inline-block;
-	//margin-bottom:15px;
+	width:50%;
+	margin-bottom:15px;
 	margin: 15px;
 	border-radius:7px;
+	overflow-wrap:break-word;
 }
 
 

@@ -76,10 +76,23 @@ app.post('/login',function(req, res) {
 	
 	
 });
+app.post('/chatlog', function (req,res) {
+	sess = req.session;
+	sess.chat = req.body.log;
+
+	console.log(sess.chat);
+	res.send("Success");
+
+});
+
+
 
 
 app.use('/', router);
 
 app.listen(1337);
 console.log('1337 server is working');
+
+
+
 
