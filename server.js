@@ -5,15 +5,19 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 app.use(session({secret: 'ssshhhh'}));
 var mysql      = require('mysql');
-/*var connection = mysql.createConnection({
+var test = [];
+var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'peter',
-  password : '123',
-  database : '<chat>'
+  password : '125',
+  database : 'mydb'
 });
 
-connection.connect();
-*/
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
 
 
 
@@ -28,7 +32,7 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-
+ 
 
 // sends index.html file to homepage 
 app.get('/', function(req, res) {
@@ -47,6 +51,8 @@ router.use(function(req, res, next) {
 
 app.get('/chat', function(req, res) {
 	res.sendFile(path.join(__dirname + "/public/chat.html"));
+//	res.send(test);
+
 });
 
 app.get('/login', function(req, res) {
@@ -56,7 +62,7 @@ app.get('/login', function(req, res) {
 
 });
 
- var sess;
+var sess;
 app.post('/login',function(req, res) {
 	sess = req.session;
 	sess.username = req.body.username;
@@ -73,14 +79,24 @@ app.post('/login',function(req, res) {
 		res.send("Fail");
 	}
 	
-	
-	
 });
-app.post('/chatlog', function (req,res) {
+
+app.post('/chat', function (req,res) {
 	sess = req.session;
 	sess.chat = req.body.log;
+	connection.query("SELECT *  FROM Chat", function (err, result, fields) {
+    if (err) throw err;
+    length = result.length;
+    sess.length = length;
+    console.log(sess.length);
+  });
 
-	console.log(sess.chat);
+	var sql = "INSERT INTO Chat (ID, Log) VALUES (sess.length, sess.chat)";
+  connection.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+	console.log(test);
 	res.send("Success");
 
 });
