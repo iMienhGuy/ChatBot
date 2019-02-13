@@ -4,27 +4,22 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 app.use(session({secret: 'ssshhhh'}));
-var mysql      = require('mysql');
-var test = [];
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'peter',
-  password : '125',
-  database : 'mydb'
-});
+var mysql = require('mysql');
+var Chat = require('./models/Chat');
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+var db = require('./db');
 
+db.authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
 
 
 
-/*var str = "W e l c o m e , U s e r ";
-  var arr = str.split(" ");
-  console.log(arr);
-  */
+
 // make the css files public
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -51,8 +46,16 @@ router.use(function(req, res, next) {
 
 app.get('/chat', function(req, res) {
 	res.sendFile(path.join(__dirname + "/public/chat.html"));
-//	res.send(test);
 
+
+
+});
+
+app.get('/chatLog',function(req,res) {
+	 Chat.findAll().then(chat => {
+  		console.log(chat);
+  		res.send(chat);
+	})
 });
 
 app.get('/login', function(req, res) {
@@ -81,23 +84,16 @@ app.post('/login',function(req, res) {
 	
 });
 
-app.post('/chat', function (req,res) {
+app.post('/post', function (req,res) {
+
 	sess = req.session;
 	sess.chat = req.body.log;
-	connection.query("SELECT *  FROM Chat", function (err, result, fields) {
-    if (err) throw err;
-    length = result.length;
-    sess.length = length;
-    console.log(sess.length);
-  });
-
-	var sql = "INSERT INTO Chat (ID, Log) VALUES (sess.length, sess.chat)";
-  connection.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-  });
-	console.log(test);
-	res.send("Success");
+	Chat.create({ Log: sess.chat, Name: sess.username }).then(chat => {
+		console.log("1 record inserted");
+		res.status(200);
+	 	res.send("Success");
+  		
+	})
 
 });
 

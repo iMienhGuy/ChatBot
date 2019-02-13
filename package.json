@@ -4,10 +4,13 @@
   "description": "Chatbot is a web application that allows a user to communicate with ChatBot using Api.ai and node express.",
   "main": "jquery-3.1.1.min.js",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "express-session": "^1.15.2",
-    "mysql": "^2.13.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "pg": "^7.8.0",
+    "sequelize": "^4.42.0"
   },
   "devDependencies": {},
   "scripts": {

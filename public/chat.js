@@ -1,8 +1,28 @@
 
 $(document).ready(function() {
+
+
     var $chatlog = $(".chatLog");
     var letter;
      
+   $.ajax({url: 'http://localhost:1337/chatLog', 
+     type : 'GET',
+     success: function(res){
+        var log = res;
+        var $chatlog = $(".chatLog");
+        for(var i = 0; i < log.length; i++) {
+           var name = res[i].Name[0];
+           var text = res[i].Log;
+           $chatlog.append("<div wordwrap >  </div>");
+           $chatlog.children().last().text(name + ": " + text);
+        }
+  
+
+       
+       
+     }
+       
+  });
 
 /*chatlog.animate({
         scrollTop: chatlog[0].scrollHeight}, 2000);*/
@@ -42,7 +62,7 @@ $(document).ready(function() {
 $("#submit").click(function() {
   var text = $("#comment").val();
   dostuff(text);
-  $.ajax({url: 'http://localhost:1337/chat', 
+  $.ajax({url: 'http://localhost:1337/post', 
     type : 'POST',
     data: {log: text},
      success: function(res){
@@ -51,14 +71,14 @@ $("#submit").click(function() {
      }
        
   });
-   $.ajax({url: 'http://localhost:1337/chat', 
-    type : 'GET',
-     success: function(res){
+  //  $.ajax({url: 'http://localhost:1337/chat', 
+  //   type : 'GET',
+  //    success: function(res){
        
-       console.log("success!", res);
-     }
+  //      console.log("success!", res);
+  //    }
        
-  });
+  // });
    
 
 });
@@ -87,7 +107,7 @@ function dostuff(text) {
     var text = $("#comment").val();
     e.preventDefault();
     dostuff(text);
-      $.ajax({url: 'http://localhost:1337/chat', 
+      $.ajax({url: 'http://localhost:1337/post', 
     type : 'POST',
     data: {log: text},
      success: function(res){
